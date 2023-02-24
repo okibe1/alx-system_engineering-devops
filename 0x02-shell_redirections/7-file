@@ -1,2 +1,7 @@
 #!/bin/bash
+<<<<<<< HEAD
 echo -e "Holberton School"  >> "\\*\\\\'\"Holberton School\"\\'\\\\*$\\?\\*\\*\\*\\*\\*:)"
+=======
+echo "Best School" > \\\*\\\\\'\"Best\ School\"\\\'\\\\\*\$\\\?\\\*\\\*\\\*\\\*\\\*\:\)
+
+>>>>>>> e118b631b016375b91325d299f39f4044db1fe13
