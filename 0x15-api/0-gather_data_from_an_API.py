@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 '''
-Python script that, using this REST API, for a given employee ID
-'''
+Python script that, using this REST API, for a given employee ID'''
+import urllib3
+# Disable SSL certificate verification
+urllib3.disable_warnings()
 import requests
 from sys import argv
 
