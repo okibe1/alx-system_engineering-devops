@@ -1,3 +1,20 @@
-nx must be running, and listening on port 80
-sudo sed -i "s/sites-enabled/sites-available/" /etc/nginx/nginx.conf
-sudo service nginx restart
+#!/usr/bin/env bash
+
+# Install Nginx if it is not already installed
+if ! command -v nginx >/dev/null 2>&1; then
+    sudo apt update
+    sudo apt install -y nginx
+fi
+
+# Check if Nginx is already configured to listen on port 80
+if sudo grep -q "listen 80;" /etc/nginx/sites-available/default; then
+    echo "Nginx is already configured to listen on port 80."
+else
+    # Configure Nginx to listen on port 80
+    sudo sed -i 's/listen\s*80;/listen 80 default_server;/g' /etc/nginx/sites-available/default
+
+    # Restart Nginx to apply the changes
+    sudo service nginx restart
+
+    echo "Nginx has been configured to listen on port 80."
+fi
